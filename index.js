@@ -12,4 +12,14 @@ const server = http.createServer((req,res) => {
 server.listen(port,hostname,()=>{
   console.log(`服务器运行在： http://${hostname}:${port}`);
   console.log(process.env.test);
+  process.argv.forEach((val,index)=>{
+    console.log(`${index}:${val}`)
+  })
+  const args = process.argv.slice(2)
+  console.log(args);
+
+  const args1 = require('minimist')(process.argv.slice(2))
+  console.log(args1)
+  console.log(args1.name);
+  console.log(args1.age);
 })
