@@ -11,4 +11,8 @@ const server = http.createServer((req,res) => {
 
 server.listen(port,hostname,()=>{
   console.log(`服务器运行在： http://${hostname}:${port}`);
+  setTimeout(()=>{
+    console.log('5s倒计时');
+    process.exit()
+  },5000)
 })
